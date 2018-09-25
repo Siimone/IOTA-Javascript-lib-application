@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <style>
+        #transactions-js{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center" style="margin: 50px">Iota.lib.js</h1>
+        <h1 class="display-4 text-center" id="iota-version"></h1>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="display-4 text-center" style="margin: 50px">Informazioni Nodo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div id="node-result">
+                    <ul>
+                        <li id="node-app-name">
+
+                        </li>
+                        <li id="node-app-version">
+
+                        </li>
+                        <li id="node-neighbors">
+
+                        </li>
+                        <li id="node-time">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="display-4 text-center" style="margin-bottom: 50px">Saldo dell'indirizzo</h1>
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="iota-address-js" placeholder="IOTA Address" aria-label="IOTA Address" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="get-balance-btn">Get Balance</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <span class="input-group-text invisible" id="address-balance-js"></span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <p class="display-4" style="margin-bottom: 50px">Crea un indirizzo IOTA</p>
+                <button type="button" class="btn btn-dark" id="start-collector-js">Inizia</button>
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <div id="main">
+                    <p id="seed"></p>
+                </div>
+                <p id="public-key-generated-js"></p>
+                <p id="private-key-generated-js"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-9 offset-lg-1 text-center">
+                <h1 class="display-4 text-center">Cerca le transazioni di un indirizzo</h1>
+            </div>
+            <div class="col-lg-12 text-center">
+                <h1 class="lead text-center">Esempio: P99KNC9BUTSSURMOSGNEYKT9V9XSTHJSFDKFXBNLJSLNQTLWJJDJ9EPNVJIVNDZQITPJOTKMPEPOUFJRWPNTGXUWEA</h1>
+
+            </div>
+            <div class="col-lg-8 offset-lg-2 text-center" style="margin-top: 20px">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="iota-address-transactions-js" placeholder="IOTA Address" aria-label="IOTA Address"
+                        aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="search-transactions-js">Cerca</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                    <div id="transactions-js"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="wrong-address-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Errore</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Inserisci un indirizzo IOTA valido!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small blue pt-4" style="margin-top: 100px; border-top: 1px solid black">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Simone Da Re</h5>
+                    <p><b>Coiners.it co-founder</b></p>
+                    <p><b>Full Stack & Blockchain Developer</b></p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 offset-md-9">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://coiners.it">Coiners.it</a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/coiners_it">Telegram</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/coiners.it/">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/coiners.it/">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "iotalibjs",
+  "version": "1.0.0",
+  "description": "New to IOTA development? Try a WebApp that uses iota.lib.js API!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siimone/IOTA-Javascript-lib-demo.git"
+  },
+  "keywords": [
+    "iota",
+    "iota-lib-js",
+    "tangle"
+  ],
+  "author": "Simone Da Re",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Siimone/IOTA-Javascript-lib-demo/issues"
+  },
+  "homepage": "https://github.com/Siimone/IOTA-Javascript-lib-demo#readme",
+  "dependencies": {
+    "curl.lib.js": "^1.0.22",
+    "iota.lib.js": "^0.5.1",
+    "parcel": "^1.9.7"
+  }
+}
